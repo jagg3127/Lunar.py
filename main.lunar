@@ -1,2 +1,2 @@
-echo Hello, World!
-echo Bye, World!
+mvar help hello
+print -help- help
