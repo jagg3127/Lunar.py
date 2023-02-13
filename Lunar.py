@@ -45,9 +45,12 @@ def tokenize(sc):
             if var_args != '':
                 split_var_args=var_args.split()
                 if len(split_var_args) < 2: return error("VAR ARGS SHORT")
-                if len(split_var_args) > 2: return error("VAR ARGS LARGE")
                 tokens.append(("MVAR_ARG1", "-"+split_var_args[0]+ "-"))
-                tokens.append(("MVAR_ARG2", split_var_args[1]))
+
+                if len(split_var_args) > 2:
+                    split_var_args=split_var_args[1:end]
+                
+                tokens.append(("MVAR_ARG2", " ".join(split_var_args)))
                 i = end
         
         elif c == "\n":

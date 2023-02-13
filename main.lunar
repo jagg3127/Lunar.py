@@ -1,2 +1,2 @@
-mvar help hello
+mvar help hello good
 print -help- help
